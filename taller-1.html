@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller #1 - Figuras Geometricas - Curso Práctico de JavaScript</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header class="nav-bar">
+        <nav>
+            <div>
+                <a href="index.html"><img class="js-challenge" src="assets/img/js-challenge-logo.png" alt=""></a>
+                <img class="platzi" src="assets/img/platzi.webp" alt="">
+            </div>
+            <a class="user" href="https://www.linkedin.com/in/lucasfrezzini/" target="_blank">@lucasfrezzini</a>
+        </nav>
+    </header>
+    <main>
+        <a class="home-btn" href="./index.html">HOME</a>
+        <!-- Main Section  -->
+        <section class="main-section main-section--inside">
+            <header>
+                <h3>TRABAJO PRÁCTICO - PLATZI</h3>
+                <h1>Figuras Geometricas</h1>
+            </header>
+            <div class="taller">
+                <!-- TRIANGULOS  -->
+                <section class="taller-card">
+                    <img src="assets/img/triangle.png" alt="">
+                    <h2>Triangulos</h2>
+                    <form id="triangulos">
+                        <div class="form-group">
+                            <label for="inputTriangulo1">Ingrese <strong> Lado A</strong> en cm:</label>
+                            <input type="number" name="lado" id="inputTriangulo1" min="1">
+                            <p id="errorT1" class="error"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTriangulo2">Ingrese <strong> Lado B</strong> en cm:</label>
+                            <input type="number" name="lado" id="inputTriangulo2" min="1">
+                            <p id="errorT2" class="error"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputBase">Ingrese <strong> Base</strong> en cm:</label>
+                            <input type="number" name="lado" id="inputBase" min="1">
+                            <p id="errorTBase" class="error"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAltura">Ingrese <strong> Altura</strong> en cm:</label>
+                            <input type="number" name="lado" id="inputAltura" min="1">
+                            <p id="errorTAltura" class="error"></p>
+                        </div>
+                        <button class="btn-form " type="button" onclick="calcularPerimetroTriangulo();">Calcular el perimetro</button>
+                        <button class="btn-form" type="button" onclick="calcularAreaTriangulo();">calcular el area</button>
+                    </form>
+                </section>
+                <!-- CUADRADOS Y RECTANGULOS  -->
+                <section  class="taller-card">
+                    <img src="assets/img/square.png" alt="">
+                    <h2>Cuadrados</h2>
+                    <form id="cuadrados">
+                        <div class="form-group">
+                            <label for="inputCuadrado">Ingrese el <strong> Lado</strong> en cm:</label>
+                            <input type="number" name="lado" id="inputCuadrado" min="1">
+                            <p class="error" id="errorCL1"></p>
+                        </div>
+                        <button class="btn-form" type="button" onclick="calcularPerimetroCuadrado();">Calcular el perimetro</button>
+                        <button class="btn-form" type="button" onclick="calcularAreaCuadrado();">Calcular el area</button>
+                    </form>
+                    <img src="assets/img/cube.png" alt="">
+                    <h2>Rectangulos</h2>
+                    <form id="rectangulos">
+                        <div class="form-group">
+                            <label for="inputRectangulo1">Ingrese el <strong> Lado A</strong> en cm:</label>
+                            <input type="number" name="lado" id="inputRectangulo1" min="1">
+                            <p class="error" id="errorRL1"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputRectangulo2">Ingrese el <strong> Lado B</strong> en cm:</label>
+                            <input type="number" name="lado" id="inputRectangulo2" min="1"> 
+                            <p class="error" id="errorRL2"></p>
+                        </div>
+                        <button class="btn-form" type="button" onclick="calcularPerimetroRectangulo();">Calcular el perimetro</button>
+                        <button class="btn-form" type="button" onclick="calcularAreaRectangulo();">Calcular el area</button>
+                    </form>
+                </section>
+                <!-- CIRCULOS  -->
+                <section class="taller-card">
+                    <img src="assets/img/circle.png" alt="">
+                    <h2>Circulos</h2>
+                    <form id="circulos">
+                        <div class="form-group">
+                            <label for="inputCirculo">Ingrese el <strong> Radio</strong> en cm:</label>
+                            <input type="number" name="lado" id="inputCirculo" min="1">
+                            <p class="error" id="errorCirculo"></p>
+                        </div>
+                        <button class="btn-form" type="button" onclick="calcularPerimetroCirculo();">Calcular el Perimetro</button>
+                        <button class="btn-form" type="button" onclick="calcularAreaCirculo();">calcular el Area</button>
+                        <button class="btn-form" type="button" onclick="calcularDiametroCirculo();">Calcular el Diametro</button>
+                    </form>
+                </section>
+            </div>
+        </section>
+
+        <!-- Nav Works  -->
+        <section class="nav-works nav-works--inside">
+            <div class="card">
+                <div class="card__item" onclick="location.href='./taller-2.html'">
+                    <img src="assets/img/price.png" alt="">
+                    <div>
+                        <header>
+                            <h4>TALLER #2</h4>
+                            <h2>Porcentajes y descuentos</h2>
+                        </header>
+                        <p>Calculo básicos para precios, descuentos y cupones de pago.</p>
+                    </div>
+                </div>
+                <div class="card__item" onclick="location.href='./taller-3.html'">
+                    <img src="assets/img/discount.png" alt="">
+                    <div>
+                        <header>
+                            <h4>TALLER #3</h4>
+                            <h2>Media, Moda y Mediana</h2>
+                        </header>
+                        <p>Calculos básicos y avanzados.</p>
+                    </div>
+                </div>
+                <div class="card__item" onclick="location.href='./taller-4.html'">
+                    <img src="assets/img/dollar.png" alt="">
+                    <div>
+                        <header>
+                            <h4>TALLER #4</h4>
+                            <h2>Analisis Salarial</h2>
+                        </header>
+                        <p>Calculo básicos para trabajar con Salarios (medianas y top 10%).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Overlay Results  -->
+    <div class="overlay" id="overlay">
+        <div class="result" id="result">
+            <p><span onclick="closeOverlay();">x</span></p>
+            <img id="resultIMG" alt="">
+            <h2 id="resultH2"></h2>
+            <h4 id="resultH4"></h4>
+        </div>
+    </div>
+
+    <script src="./assets/js/taller-1.js"></script>
+</body>
+</html>

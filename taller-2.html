@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller #2 - Precios y descuentos - Curso Práctico de JavaScript</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header class="nav-bar">
+        <nav>
+            <div>
+                <a href="index.html"><img class="js-challenge" src="assets/img/js-challenge-logo.png" alt=""></a>
+                <img class="platzi" src="assets/img/platzi.webp" alt="">
+            </div>
+            <a class="user" href="https://www.linkedin.com/in/lucasfrezzini/" target="_blank">@lucasfrezzini</a>
+        </nav>
+    </header>
+    <main>
+        <a class="home-btn" href="./index.html">HOME</a>
+
+        <!-- Main Section  -->
+        <section class="main-section main-section--inside">
+            <header>
+                <h3>TRABAJO PRÁCTICO - PLATZI</h3>
+                <h1>Porcentajes y descuentos en precios</h1>
+            </header>
+            <div class="taller">
+                <section id="precios-descuentos" class="taller-card">
+                    <img src="assets/img/price.png" alt="">
+                    <h2>Cálculos</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="inputPrice">Escribe el <strong>Precio</strong> de tu producto</label>
+                            <input type="number" id="inputPrice" min="1">
+                            <p class="error" id="errorPrice"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDiscount">Escribe el <strong>Descuento</strong> de tu producto</label>
+                            <input type="number" id="inputDiscount" min="0">
+                            <p class="error" id="errorDiscount"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPrice">Escribe el <strong>Cupón</strong> si tienes</label>
+                            <input type="text" id="inputCoupon">
+                            <p class="error" id="errorCoupon"></p>
+                        </div>
+                        <button class="btn-form" type="button" onclick="onClickButtonPriceDiscount();"> Calcuar precio con descuento</button>
+                    </form>
+                </section>
+                <section id="triangulos" class="taller-card">
+                    <h2>Lista de Cupones disponibles</h2>
+                    <ul>
+                        <li>Promo10</li>
+                        <li>Promo20</li>
+                        <li>Promo30</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <!-- Nav Works  -->
+        <section class="nav-works nav-works--inside">
+            <div class="card">
+                <div class="card__item" onclick="location.href='./taller-1.html'">
+                    <img src="assets/img/circle.png" alt="">
+                    <div>
+                        <header>
+                            <h4>TALLER #1</h4>
+                            <h2>Figuras Geometricas</h2>
+                        </header>
+                        <p>Calculo básicos para Cuadrados, Triangulos y Circulos.</p>
+                    </div>
+                </div>
+                <div class="card__item" onclick="location.href='./taller-3.html'">
+                    <img src="assets/img/discount.png" alt="">
+                    <div>
+                        <header>
+                            <h4>TALLER #3</h4>
+                            <h2>Media, Moda y Mediana</h2>
+                        </header>
+                        <p>Calculos básicos y avanzados.</p>
+                    </div>
+                </div>
+                <div class="card__item" onclick="location.href='./taller-4.html'">
+                    <img src="assets/img/dollar.png" alt="">
+                    <div>
+                        <header>
+                            <h4>TALLER #4</h4>
+                            <h2>Analisis Salarial</h2>
+                        </header>
+                        <p>Calculo básicos para trabajar con Salarios (medianas y top 10%).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Overlay Results  -->
+    <div class="overlay" id="overlay">
+        <div class="result" id="result">
+            <p><span onclick="closeOverlay();">x</span></p>
+            <img id="resultIMG" alt="">
+            <h2 id="resultH2"></h2>
+            <h4 id="resultH4"></h4>
+        </div>
+    </div>
+
+    <script src="./assets/js/taller-2.js"></script>
+</body>
+</html>
