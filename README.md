@@ -1,5 +1,6 @@
 # platzi-curso-practico-javascript
 Proyecto para el Curso Práctico de JavaScript de Platzi
+Live: https://lucasfrezzini.github.io/platzi-curso-practico-javascript/index.html
 
 ## Conceptos vistos en el curso
 - Manipulación del DOM
