@@ -39,9 +39,9 @@ function calcularPrecioConDescuento(precio, descuento) {
 
 function canApplyCoupon(c) {
     const coupons = [
-        'Promo10',
-        'Promo20',
-        'Promo30'
+        'PROMO10',
+        'PROMO20',
+        'PROMO30'
     ]
 
     if (!coupons.includes(c)) {
@@ -55,11 +55,11 @@ function canApplyCoupon(c) {
 
 function getCouponDiscount(c) {
     switch (c) {
-        case 'Promo10':
+        case 'PROMO10':
             return 10;
-        case 'Promo20':
+        case 'PROMO20':
             return 20;
-        case 'Promo30':
+        case 'PROMO30':
             return 30;
         default:
             return 0;
@@ -85,7 +85,7 @@ function onClickButtonPriceDiscount() {
 
     const price = parseInt(document.getElementById('inputPrice').value);
     const discount = parseInt(document.getElementById('inputDiscount').value);
-    const coupon = document.getElementById('inputCoupon').value;
+    const coupon = document.getElementById('inputCoupon').value.toUpperCase();
     let precioConDescuento = 0;
 
     if (checkInputs(price, discount)) {
